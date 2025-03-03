@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopService", "EShopService\EShopService.csproj", "{E015D5EE-A6C8-4C9E-836B-84694752698A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShopService", "EShopService\EShopService.csproj", "{C712ECC4-2AB1-48D9-8126-F65B7D0F9796}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E015D5EE-A6C8-4C9E-836B-84694752698A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E015D5EE-A6C8-4C9E-836B-84694752698A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E015D5EE-A6C8-4C9E-836B-84694752698A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E015D5EE-A6C8-4C9E-836B-84694752698A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C712ECC4-2AB1-48D9-8126-F65B7D0F9796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C712ECC4-2AB1-48D9-8126-F65B7D0F9796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C712ECC4-2AB1-48D9-8126-F65B7D0F9796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C712ECC4-2AB1-48D9-8126-F65B7D0F9796}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {95BB611E-FDB4-4402-A457-A13EA30781C3}
+		SolutionGuid = {B52BC4B8-AA8F-4CEF-887D-968527E36032}
 	EndGlobalSection
 EndGlobal
