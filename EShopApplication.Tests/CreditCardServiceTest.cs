@@ -14,7 +14,7 @@ namespace EShopApplication.Tests
         [InlineData ("5530016454538418")]
         [InlineData ("5551561443896215")]
         [InlineData ("5131208517986691")]
-        public void CheckCreditCardNumber_CorrectLenght_ExpectedTrue(string Number)
+        public void ValidateCard_CorrectLenght_ExpectedTrue(string Number)
         {
             var creditCardService = new CreditCardService();
 
@@ -31,7 +31,7 @@ namespace EShopApplication.Tests
         [InlineData("378523393817")]
         [InlineData("44-  0071-6540-17780 98898432 3242")]
         [InlineData("")]
-        public void CheckCreditCardNumber_CorrectLenght_ExpectedFalse(string Number)
+        public void ValidateCard_CorrectLenght_ExpectedFalse(string Number)
         {
             var creditCardService = new CreditCardService();
 
@@ -53,7 +53,7 @@ namespace EShopApplication.Tests
         [InlineData("MasterCard", "5551561443896215")]
         [InlineData("MasterCard", "5131208517986691")]
 
-        public void CheckCreditCardNumber_CorrectBankName_ExpectedTrue(string expected, string number)
+        public void GetCardType_CorrectBankName_ExpectedTrue(string expected, string number)
         {
             var creditCardService = new CreditCardService();
 
