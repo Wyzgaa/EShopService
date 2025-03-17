@@ -1,5 +1,5 @@
 using EShop.Application;
-
+using EShop.Domain.Exceptions;
 namespace EShopApplication.Tests
 {
     public class CreditCardServiceTest
@@ -27,19 +27,25 @@ namespace EShopApplication.Tests
 
         [Theory]
         [InlineData("3497 7965 8312 79729876")]
-        [InlineData("345-470")]
-        [InlineData("378523393817")]
         [InlineData("44-  0071-6540-17780 98898432 3242")]
-        [InlineData("")]
-        public void ValidateCard_CorrectLenght_ExpectedFalse(string Number)
+        public void ValidateCard_CorrectLenght_ExpectedCardNumberTooLongException(string Number)
         {
             var creditCardService = new CreditCardService();
 
-            var result = creditCardService.ValidateCard(Number);
 
-            bool expected = false;
+            Assert.Throws<CardNumberTooLongException>(() => creditCardService.ValidateCard(Number));
+        }
 
-            Assert.Equal(expected, result);
+
+        [Theory]
+        [InlineData("345-470")]
+        [InlineData("378523393817")]
+        [InlineData("")]
+        public void ValidateCard_CorrectLenght_ExpectedCardNumberTooShortException(string Number)
+        {
+            var creditCardService = new CreditCardService();
+
+            Assert.Throws<CardNumberTooShortException>(() => creditCardService.ValidateCard(Number));
         }
 
         [Theory]
@@ -60,6 +66,16 @@ namespace EShopApplication.Tests
             var result = creditCardService.GetCardType(number);
 
             Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("Discover")]
+        [InlineData("JCB")]
+        [InlineData("Diners Club")]
+        [InlineData("Maestro")]
+        public void GetCardType_AcceptedBank_ExpectedCardNumberInvalidException(string number)
+        {
+
         }
 
     }
