@@ -1,5 +1,6 @@
 using EShop.Application;
 using EShop.Domain.Exceptions;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace EShopApplication.Tests
 {
     public class CreditCardServiceTest
@@ -69,13 +70,13 @@ namespace EShopApplication.Tests
         }
 
         [Theory]
-        [InlineData("Discover")]
-        [InlineData("JCB")]
-        [InlineData("Diners Club")]
-        [InlineData("Maestro")]
-        public void GetCardType_AcceptedBank_ExpectedCardNumberInvalidException(string number)
-        {
+        [InlineData("3589297434675026")]
 
+        public void GetCardType_CorrectBankName_ExpectedCardNumberInvalidException(string number)
+        {
+            var creditCardService = new CreditCardService();
+
+            Assert.Throws<CardNumberInvalidException>(() => creditCardService.GetCardType(number));
         }
 
     }
